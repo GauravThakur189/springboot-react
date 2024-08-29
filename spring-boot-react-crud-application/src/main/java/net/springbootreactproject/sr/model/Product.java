@@ -1,11 +1,9 @@
 package net.springbootreactproject.sr.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -14,6 +12,7 @@ public class Product {
     private String productName;
     private String description;
     private Double price;
+    private String status;
 
     public Integer getId() {
         return id;
@@ -55,6 +54,6 @@ public class Product {
         this.productName = productName;
     }
 
-    private String status;
+
 
 }
