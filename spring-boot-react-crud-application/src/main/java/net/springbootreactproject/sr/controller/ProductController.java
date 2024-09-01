@@ -41,9 +41,9 @@ public class ProductController {
         return new ResponseEntity<>(s,HttpStatus.OK);
     }
 
-    @PostMapping("/editProduct")
-    public ResponseEntity<Product> editProduct(@RequestBody Product product){
-        Product product1 = productService.saveProduct(product);
+    @PostMapping("/editProduct/{id}")
+    public ResponseEntity<Product> editProduct( @PathVariable Integer id, @RequestBody Product product){
+        Product product1 = productService.editProdujct(id,product);
         return new ResponseEntity<>(product1, HttpStatus.CREATED);
     }
 }

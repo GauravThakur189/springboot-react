@@ -44,4 +44,16 @@ public class ProductServiceImpl implements ProductService{
         return "Product not found";
      }
     }
+
+    @Override
+    public Product editProdujct(Integer id,Product product) {
+       Product product1 = productRepository.findById(id).get();
+
+       product1.setProductName(product.getProductName());
+       product1.setDescription(product.getDescription());
+       product1.setPrice(product.getPrice());
+       product1.setStatus(product.getStatus());
+       productRepository.save(product1);
+        return product1;
+    }
 }
